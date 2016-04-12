@@ -21,7 +21,8 @@ passportMiddleware.configure(config.auth[NODE_ENV])
 app.passport = passportMiddleware.passport
 
 // connect to the database
-mongoose.connect(config.database[NODE_ENV].url)
+//mongoose.connect(config.database[NODE_ENV].url)
+mongoose.connect(config.database["development"].url)
 
 // set up our express middleware
 app.use(morgan('dev')) // log every request to the console
